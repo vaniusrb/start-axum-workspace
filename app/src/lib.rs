@@ -48,12 +48,22 @@ pub fn App() -> impl IntoView {
 /// Renders the home page of your application.
 #[component]
 fn HomePage() -> impl IntoView {
-    // Creates a reactive value to update the button
-    let count = RwSignal::new(0);
-    let on_click = move |_| *count.write() += 1;
+    let (count, set_count) = signal(0);
 
     view! {
-        <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        <main class="my-0 mx-auto max-w-3xl text-center">
+            <h2 class="p-6 text-4xl">"Welcome to Leptos with Tailwind"</h2>
+            <p class="px-10 pb-10 text-left">"Tailwind will scan your Rust files for Tailwind class names and compile them into a CSS file."</p>
+            <button
+                class="bg-sky-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
+                on:click=move |_| *set_count.write() += 1
+            >
+                {move || if count.get() == 0 {
+                    "Click me!".to_string()
+                } else {
+                    count.get().to_string()
+                }}
+            </button>
+        </main>
     }
 }
