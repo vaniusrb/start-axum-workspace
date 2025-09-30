@@ -14,6 +14,11 @@ If you don't have `cargo-leptos` installed you can install it with
 ```bash
 cargo install cargo-leptos --locked
 ```
+Or via binstall:
+```bash
+cargo install cargo-binstall
+cargo binstall cargo-leptos
+```
 
 Then run
 ```bash
