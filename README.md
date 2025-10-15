@@ -110,6 +110,13 @@ LEPTOS_RELOAD_PORT="3001"
 ```
 Finally, run the server binary.
 
+## Optional dependency
+
+Install leptosfmt for better formatting:
+```
+cargo install leptosfmt
+```
+
 ## Licensing
 
 This template itself is released under the Unlicense. You should replace the LICENSE for your own application with an appropriate license if you plan to release it publicly.
